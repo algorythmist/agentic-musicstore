@@ -1,0 +1,14 @@
+# AI
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langsmith
+openai
+# Tools
+faiss-cpu
+python-dotenv
+docx2txt
+pypdf
+# UI
+streamlit
