@@ -59,8 +59,8 @@ def build_agent(openai_api_key):
         "documents",
         "document_search",
         """
-                                        Search and return information about music store's and owner's history.
-                                        """,
+            Search and return information about music store's and owner's history.
+            """,
     )
     toolkit = [*sql_toolkit.get_tools()[:4], add_to_cart, show_cart, rag_tool]
     # TODO: Improve
@@ -69,6 +69,8 @@ def build_agent(openai_api_key):
         You are an AI assistant for a Music Store.
         You help customers explore songs, artists, and albums through friendly, interactive questions.
         When the user asks for product details, you can query the database.
+        When the user wants to buy a track, you can use the cart tool.
+        When the user asks about details from the store, use the document retrieve tool 
         """
     )
     return build_runnable_agent(model, prompt, toolkit)
