@@ -12,24 +12,27 @@ from langchain_openai import ChatOpenAI
 # Define the prompt template
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system", """You are an AI assistant for a Music Store.
+        (
+            "system",
+            """
+            You are an AI assistant for a Music Store.
             You help customers explore songs, artists, and albums through friendly, interactive questions.
             When the user asks for product details, you can query the database.
-        """),
+            """,
+        ),
         MessagesPlaceholder("chat_history", optional=True),
         ("human", "{input}"),
         MessagesPlaceholder("agent_scratchpad"),
     ]
 )
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Obtain the API key from .env
     load_dotenv()
     openai_api_key = os.getenv("OPENAI_API_KEY")
 
     model = ChatOpenAI(
-        model="gpt-4o",  # or "gpt-4", "gpt-3.5-turbo", etc.
-        api_key=openai_api_key
+        model="gpt-4o", api_key=openai_api_key  # or "gpt-4", "gpt-3.5-turbo", etc.
     )
 
     # Create SQL tools for the database
@@ -52,11 +55,11 @@ if __name__ == '__main__':
     # Run agent in an interactive loop
     while True:
         user_input = input("Type your question here (or type 'q' to quit): ")
-        if user_input.lower() == 'q':
+        if user_input.lower() == "q":
             break
         result = agent_with_chat_history.invoke(
             {"input": user_input},
-            config={"configurable": {"session_id": "my_session_id"}}
+            config={"configurable": {"session_id": "my_session_id"}},
         )
-        print(f'User: {user_input}')
+        print(f"User: {user_input}")
         print(f'AI: {result["output"]}')

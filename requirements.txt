@@ -6,6 +6,7 @@ langchain-community
 langsmith
 openai
 # Tools
+black
 faiss-cpu
 python-dotenv
 docx2txt
