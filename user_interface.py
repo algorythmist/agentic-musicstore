@@ -14,7 +14,7 @@ st.markdown("Ask me anything about songs, artists, and albums!")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-if "agent_executor" not in st.session_state:
+if "agent_with_chat_history" not in st.session_state:
     load_dotenv()
     openai_api_key = os.getenv("OPENAI_API_KEY")
     st.session_state.agent_with_chat_history = build_agent(openai_api_key)
