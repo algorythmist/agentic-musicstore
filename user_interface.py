@@ -1,6 +1,8 @@
 import os
+
 import streamlit as st
 from dotenv import load_dotenv
+
 from chinook_musicstore_agent import build_agent
 
 # Page configuration

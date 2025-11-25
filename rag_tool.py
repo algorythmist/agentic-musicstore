@@ -1,7 +1,4 @@
-import os
-
 import faiss
-from dotenv import load_dotenv
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores import FAISS
 from langchain_core.tools import create_retriever_tool, Tool
