@@ -12,3 +12,7 @@ docx2txt
 pypdf
 # UI
 streamlit
+# Voice
+SpeechRecognition
+pyttsx3
+PyAudio
