@@ -1,18 +1,12 @@
-# AI
-langchain-core
-langchain-openai
-langchain-community
-langsmith
-openai
-# Tools
-black
-faiss-cpu
-python-dotenv
 docx2txt
-pypdf
-# UI
-streamlit
-# Voice
-SpeechRecognition
+faiss-cpu
+langchain_classic
+langchain_community
+langchain_core
+langchain_openai
+langchain_text_splitters
+python-dotenv
 pyttsx3
-PyAudio
+speechrecognition
+streamlit
+
